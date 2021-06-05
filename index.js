@@ -8,12 +8,13 @@ const overlay = document.querySelector('.lightbox__overlay');
 
 
 
+
 const galleryMarkup = makeGalleryMarkup(gallery);
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
 galleryContainer.addEventListener('click', onImageClick);
 btn.addEventListener('click', onModalClose);
-overlay.addEventListener('click', onOverlayClick);
+overlay.addEventListener('click', onModalClose);
 
 
 
@@ -49,7 +50,6 @@ function onImageClick(event) {
     lightBoxImage.alt = image.alt;
 
     addEventListener('keyup', onClick);
-    console.log(image.src);
 
 }
 
@@ -61,19 +61,27 @@ function onModalClose() {
     removeEventListener('keyup', onClick)
 }
 
-function onOverlayClick() {
-    onModalClose();
-}
-
 function onClick(event) {
+
     if (event.code === 'Escape') {
         onModalClose();
     }
-    if (event.code === 'ArrowRight') {
-    
-    }
-    if (event.code === 'ArrowLeft') {
-        
-    }
-}
 
+    if (event.code === 'ArrowRight') {
+
+      
+    }
+        
+    
+}
+ 
+
+// const users = [
+//     { id: '4616351654', userName: 'John' },
+//     { id: '18466516', userName: 'Mari' },
+//     { id: '552466', userName: 'Andy' },
+// ];
+
+// const user = users.findIndex(user => user.id === '18466516');
+
+// console.log(user);
